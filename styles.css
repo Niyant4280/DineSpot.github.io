@@ -55,7 +55,7 @@ nav ul li a {
 
 .hero {
     height: 100vh;
-    background: url('background.jpg') no-repeat center center/cover;
+    background: url('homepageback.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,7 @@ nav ul li a {
 }
 
 body{
-    background-image: url(images/albert-YYZU0Lo1uXE-unsplash.jpg);
+    background-image: url(homepageback.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
