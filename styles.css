@@ -111,7 +111,7 @@ nav ul li a {
         text-align: right;
     }
 
-    nav ul.show {
+    nav ul.active {
         display: flex;
     }
 
