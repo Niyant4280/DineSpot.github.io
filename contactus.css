@@ -1,0 +1,93 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.contact-section {
+    padding: 50px;
+    background-color: #FC7B7B;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    flex: 1;
+    padding: 30px;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #FC7B7B;
+    margin-bottom: 20px;
+}
+
+.form-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #FC7B7B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #d9534f;
+}
+
+.image-container {
+    flex: 1;
+    background-color: #f2f2f2;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
