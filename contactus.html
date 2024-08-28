@@ -43,25 +43,30 @@
                 <p>Got a question about Dine spot? Are you interested in partnering with us? Have some suggestions or just want to say hi? Contact us:</p>
                 
                 <!-- Form Submission to Google Apps Script -->
-                <form id="contactForm" name="submit-to-google-sheet" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
+                <form id="contactForm" action="https://sheetdb.io/api/v1/az4kbwpxmlab0" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
                     <input type="text" id="name" name="data[name]" placeholder="Full name" required>
                     <input type="email" id="email" name="data[email]" placeholder="Email" required>
                     <input type="tel" id="phone" name="data[phone]" placeholder="Phone Number" required>
                     <textarea id="message" name="data[message]" placeholder="Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
+                                    <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("contactForm")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('page2.html', '_blank');
 
-                                <script>
-                                          const scriptURL = '<https://script.google.com/macros/s/AKfycbxXleMOKv4LBvFOkteyUIsr6ScBKjXbeFlqws5jafDBz6w4hPHtKljFB0vf3l5PmBJadw/exec>'
-                                          const form = document.forms['submit-to-google-sheet']
-
-                                          form.addEventListener('submit', e => {
-                                                e.preventDefault()
-                                             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                                          .then(response => console.log('Success!', response))
-                                          .catch(error => console.error('Error!', error.message))
-                                          })
-                                 </script>
+          });
+        });
+        </script>
+                             
 
                 <!-- Hidden iframe to handle the form submission response -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded();"></iframe>
