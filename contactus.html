@@ -44,10 +44,10 @@
                 
                 <!-- Form Submission to Google Apps Script -->
                 <form id="contactForm" name="submit-to-google-sheet" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
-                    <input type="text" id="name" name="name" placeholder="Full name" required>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    <input type="text" id="name" name="data[name]" placeholder="Full name" required>
+                    <input type="email" id="email" name="data[email]" placeholder="Email" required>
+                    <input type="tel" id="phone" name="data[phone]" placeholder="Phone Number" required>
+                    <textarea id="message" name="data[message]" placeholder="Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
 
