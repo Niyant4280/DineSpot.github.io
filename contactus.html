@@ -57,13 +57,9 @@
           fetch(form.action, {
               method : "POST",
               body: new FormData(document.getElementById("contactForm")),
-          }).then(
-              response => response.json()
-          ).then((html) => {
-            // you can put any JS code here
-            window.open('page2.html', '_blank');
+          })  .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
 
-          });
         });
         </script>
                              
