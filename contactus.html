@@ -43,13 +43,25 @@
                 <p>Got a question about Dine spot? Are you interested in partnering with us? Have some suggestions or just want to say hi? Contact us:</p>
                 
                 <!-- Form Submission to Google Apps Script -->
-                <form id="contactForm" action="https://script.google.com/macros/s/AKfycbwRuAUPqBckxa53Iu9toBOPUBWP7aVYFqJ-itlnGbCN8o9WbEmsxIYM2ZGF3BcXLjyN/exec" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
+                <form id="contactForm" name="submit-to-google-sheet" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
                     <input type="text" id="name" name="name" placeholder="Full name" required>
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     <textarea id="message" name="message" placeholder="Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
+
+                                <script>
+                                          const scriptURL = '<https://script.google.com/macros/s/AKfycbzpSOzibM1SUQjE1XK23db1DEyqah47eEpiIQv1pQkonzRJ92fC3Vhk5fOTSLEmLwo9WQ/exec>'
+                                          const form = document.forms['submit-to-google-sheet']
+
+                                          form.addEventListener('submit', e => {
+                                                e.preventDefault()
+                                             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                          .then(response => console.log('Success!', response))
+                                          .catch(error => console.error('Error!', error.message))
+                                          })
+                                 </script>
 
                 <!-- Hidden iframe to handle the form submission response -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded();"></iframe>
