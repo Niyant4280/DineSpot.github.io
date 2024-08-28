@@ -6,6 +6,32 @@
     <title>Contact Us - Dine Spot</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="contactus.css">
+
+    <!-- JavaScript to handle iframe submission -->
+    <script>
+        // Declare the submitted flag globally
+        var submitted = false;
+
+        // Function to set the submitted flag when form is submitted
+        function setSubmitted() {
+            submitted = true;
+            console.log('Form submitted. Waiting for iframe to load.');
+        }
+
+        // Function to handle iframe load event
+        function iframeLoaded() {
+            console.log('Iframe loaded.');
+            if (submitted) {
+                alert('Message sent successfully!');
+                submitted = false; // Reset the flag after the message is sent
+            }
+        }
+
+        // Ensure script runs after DOM is fully loaded
+        window.onload = function() {
+            console.log('Page fully loaded. Script is ready.');
+        }
+    </script>
 </head>
 <body>
     <section class="contact-section">
@@ -17,7 +43,7 @@
                 <p>Got a question about Dine spot? Are you interested in partnering with us? Have some suggestions or just want to say hi? Contact us:</p>
                 
                 <!-- Form Submission to Google Apps Script -->
-                <form id="contactForm" action="https://script.google.com/macros/s/19ps8QjH4VDfmaQSvLxRDwIvEQhpkY44uVqKmcbKHTvI/exec" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxkYapmOHY23vqV0tHqvY1KErhO2Jr2c171g2hO_kgvwKK7eqtSCCNwWSdLLdAkng/exec" method="POST" target="hidden_iframe" onsubmit="setSubmitted();">
                     <input type="text" id="name" name="name" placeholder="Full name" required>
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
@@ -26,17 +52,12 @@
                 </form>
 
                 <!-- Hidden iframe to handle the form submission response -->
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Message sent successfully!'); }"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded();"></iframe>
             </div>
             <div class="image-container">
                 <img src="contactus.jpg" alt="Team working">
             </div>
         </div>
     </section>
-
-    <!-- JavaScript to handle iframe submission -->
-    <script>
-        let submitted = false;
-    </script>
 </body>
 </html>
