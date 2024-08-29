@@ -18,7 +18,7 @@ body {
 
 .testimonial-grid .testimonial-box {
     padding: 20px;
-    background-color: #ffffff; /* Default background color */
+    background-color: #f0f0f0; /* Greyish background color */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center-align text */
@@ -74,7 +74,13 @@ body {
     padding: 35px; /* Padding inside the box */
     background-color: #f0f0f0; /* Default background color */
     border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3); /* Shadow for the box */
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1); /* Shadow for the box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover transition */
+}
+
+.testimonial-section .testimonial-box:hover {
+    transform: translateY(-10px); /* Lift up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .testimonial-section .testimonial-box.reverse {
