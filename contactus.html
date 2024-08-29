@@ -21,6 +21,7 @@
             if (submitted) {
                 alert('Message sent successfully!');
                 submitted = false; 
+                window.location.reload(); // Refresh the page after the alert
             }
         }
 
@@ -45,18 +46,6 @@
                     <textarea id="message" name="data[message]" placeholder="Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
-
-                <script>
-                    var form = document.getElementById('contactForm');
-                    form.addEventListener("submit", e => {
-                        e.preventDefault();
-                        fetch(form.action, {
-                            method : "POST",
-                            body: new FormData(document.getElementById("contactForm")),
-                        }).then(response => console.log('Success!', response))
-                          .catch(error => console.error('Error!', error.message));
-                    });
-                </script>
 
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded();"></iframe>
             </div>
