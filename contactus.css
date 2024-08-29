@@ -85,18 +85,17 @@ body {
 
 .image-container {
     flex: 1; /* Keep the image container slightly smaller */
-    padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Fills the entire container with background color */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .image-container img {
-    max-width: 100%; /* Make the image take up the full width */
-    height: 100%; /* Adjust the height to fill the container */
-    max-height: 500px; /* Limit the height to avoid overflow */
+    width: 100%; /* Make the image cover the container width */
+    height: 100%; /* Make the image cover the container height */
+    max-height: none; /* Remove any height restrictions */
     display: block;
-    border-radius: 10px;
     object-fit: cover; /* Ensure the image covers the container without stretching */
+    border-radius: 0; /* Remove border-radius to make it fit the container completely */
 }
