@@ -139,7 +139,7 @@ body {
 .contact-section {
     display: flex;
     flex-wrap: wrap;
-    background-color: #FC7B7B;
+    background-color: #FC7B7B; /* Section background */
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -151,19 +151,19 @@ body {
 }
 
 .contact-section:hover {
-    transform: scale(1.02); /* Add the same hover effect */
+    transform: scale(1.02); /* Hover effect added */
 }
 
 .contact-text {
     flex: 1;
     color: #000;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove border radius */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 20px;
-    background-color: #f06363;
+    margin-right: 20px; /* Add margin to create space */
+    background-color: transparent; /* Make the background transparent */
 }
 
 .contact-text p {
@@ -192,9 +192,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f06363;
-    padding: 10px;
-    border-radius: 10px;
+    background-color: transparent; /* Make the background transparent */
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove border radius */
 }
 
 .contact-image img {
@@ -215,6 +215,10 @@ body {
         margin-right: 0;
         margin-bottom: 20px;
         text-align: center;
+    }
+
+    .contact-text {
+        margin-bottom: 20px; /* Add margin to create space between text and image */
     }
 
     .about-text h2, .services-text h2 {
