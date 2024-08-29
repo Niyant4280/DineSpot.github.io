@@ -150,6 +150,10 @@ body {
     align-items: stretch;
 }
 
+.contact-section:hover {
+    transform: scale(1.02); /* Add the same hover effect */
+}
+
 .contact-text {
     flex: 1;
     color: #000;
