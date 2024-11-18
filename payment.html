@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Dine Spot</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+    <main>
+        <section class="payment">
+            <h2>Complete Your Payment</h2>
+            <div id="reservation-summary"></div>
+
+            <h3>Select a Payment Method:</h3>
+            <form id="payment-form">
+                <label>
+                    <input type="radio" name="payment-method" value="Credit Card" required> Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="UPI" required> UPI
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="Cash" required> Cash
+                </label>
+
+                <button type="submit">Confirm Reservation</button>
+            </form>
+        </section>
+    </main>
+
+    
+    <script src="payment.js" defer></script>
+</body>
+</html>
