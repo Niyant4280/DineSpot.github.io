@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+header nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Subscription Banner */
+.subscription-banner {
+    position: relative;
+    background-image: url('EXCLUSIVE\ BACK.jpg'); /* Add a suitable banner image */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscription-banner .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.subscription-banner h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.subscription-banner p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Offers Section */
+.offers {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.offer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    max-width: 350px;
+    margin: 0 10px;
+}
+
+.offer img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.offer h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.offer p {
+    font-size: 16px;
+    color: #555;
+}
+
+.offer button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.offer button:hover {
+    background-color: #e67e22;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.benefits {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    margin: 20px;
+}
+
+.benefits img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.benefits p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets (600px to 1024px) */
+@media (max-width: 1024px) {
+    .subscription-banner h1 {
+        font-size: 32px;
+    }
+    
+    .subscription-banner p {
+        font-size: 16px;
+    }
+
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .why-choose-us h2 {
+        font-size: 28px;
+    }
+
+    .benefits {
+        width: 200px;
+    }
+}
+
+/* For Mobile Devices (less than 600px) */
+@media (max-width: 600px) {
+    .subscription-banner h1 {
+        font-size: 28px;
+    }
+    
+    .subscription-banner p {
+        font-size: 14px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .why-choose-us h2 {
+        font-size: 24px;
+    }
+
+    .benefits {
+        width: 150px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
