@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Dine Spot</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <main>
+        <section class="reservation-container">
+            <div class="reservation-image">
+                <img src="seating.jpg" alt="Restaurant Image"> <!-- Replace with your image source -->
+            </div>
+            <div class="reservation">
+                <h2>Make a Reservation</h2>
+                <form id="reservation-form">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time" name="time" required>
+
+                    <label for="people">Number of People:</label>
+                    <input type="number" id="people" name="people" min="1" max="20" required>
+
+                    <p><strong>Total Cost:</strong> <span id="total-cost">₹0</span></p>
+
+                    <button type="submit">Proceed to Payment</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="reservation.js" defer></script>
+</body>
+</html>
