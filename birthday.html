@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday/Anniversary Special</title>
+  
+  <style>
+    /* Base Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fefefe;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #FFA726; /* Orange color for a warm, inviting feel */
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .offers-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .offer-card {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .offer-image img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .offer-text h3 {
+      font-size: 1.6rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .offer-text p {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .offer-price {
+      font-size: 1.2rem;
+      color: #FFA726;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      margin-top: 50px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .offer-card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Celebrate Your Special Moments with DineSpot!</h1>
+      <p>Book a table for your Birthday or Anniversary and enjoy exclusive offers!</p>
+    </header>
+
+    <div class="offers-section">
+      <!-- Offer 1 -->
+      <div class="offer-card">
+        <div class="offer-image">
+          <img src="birthday.jpg" alt="Birthday Offer">
+        </div>
+        <div class="offer-text">
+          <h3>Birthday Special</h3>
+          <p>Celebrate your birthday with us and enjoy a complimentary cake, 10% off your total bill, and more!</p>
+          <div class="offer-price">₹500</div>
+        </div>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="offer-card">
+        <div class="offer-image">
+          <img src="anniversary.jpg" alt="Anniversary Offer">
+        </div>
+        <div class="offer-text">
+          <h3>Anniversary Celebration</h3>
+          <p>Celebrate your anniversary with a romantic candlelit dinner, special discount, and a beautiful bouquet!</p>
+          <div class="offer-price">₹800</div>
+        </div>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="offer-card">
+        <div class="offer-image">
+          <img src="get together.jpg" alt="Group Offer">
+        </div>
+        <div class="offer-text">
+          <h3>Group Celebration</h3>
+          <p>Book for 10 or more people and enjoy a special discount on the total bill, along with free drinks!</p>
+          <div class="offer-price">₹2000</div>
+        </div>
+      </div>
+    </div>
+
+  
+  </div>
+
+</body>
+</html>
