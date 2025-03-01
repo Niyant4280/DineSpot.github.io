@@ -1,0 +1,105 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.contact-section {
+    padding: 50px;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    flex: 1.1; /* Give the form container a bit more space */
+    padding: 30px;
+    background-color: #f0f4f8;
+    border-right: 2px solid #e0e0e0;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #555;
+}
+
+.image-container {
+    flex: 1; /* Keep the image container slightly smaller */
+    padding: 30px; /* Increase padding for better spacing */
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid #e0e0e0; /* Add a border to separate the sections */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 450px; /* Adjust height to prevent overflow */
+    border-radius: 10px;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow for better emphasis */
+}

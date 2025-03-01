@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Dine Spot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loginsignup.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="form-container">
+      <h2>Welcome Back</h2>
+      <p class="subheading">Log in to Dine Spot</p>
+      <form action="#" method="post">
+        <div class="input-field">
+          <input type="email" id="email" required aria-label="Email Address">
+          <label for="email">Email Address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password" required aria-label="Password">
+          <label for="password">Password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="button-container">
+          <button type="submit">Log In</button>
+        </div>
+      </form>
+      <div class="register">
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="chatbot-container"></div>
+  <script src="login.js"></script>
+</body>
+</html>

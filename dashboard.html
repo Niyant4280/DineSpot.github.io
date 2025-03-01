@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome, <span id="username">User</span></h1>
+    </header>
+
+    <section class="user-details">
+        <div class="profile-card">
+            <img id="profileImage" src="userprofile.jpg" alt="Profile Picture">
+            <h2 id="userFullName">John Doe</h2>
+            <p>Email: <span id="userEmail">niyant.sanja@gmail.com</span></p>
+            <p>Phone: <span id="userPhone">+91 9876543210</span></p>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </section>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

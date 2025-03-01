@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Reservation Confirmation</title>
+  <style>
+    /* Base styling */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fefefe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in;
+      background-image: url('Confirmation.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      width: 400px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border: 3px solid #FFA726;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .btn {
+      background: #FFA726;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #FF7043;
+    }
+
+    .payment-form, .confirmation {
+      display: none;
+    }
+
+    .confirmation h1 {
+      color: #66BB6A;
+      font-size: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <!-- Reservation Form -->
+    <form id="reservation-form">
+      <div class="form-group">
+        <label for="customer-name">Customer Name</label>
+        <input type="text" id="customer-name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="Enter your city" required>
+      </div>
+      <div class="form-group">
+        <label for="restaurant">Restaurant Name</label>
+        <input type="text" id="restaurant" placeholder="Enter restaurant name" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" id="time" required>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <input type="number" id="guests" placeholder="Enter number of guests" min="1" required>
+      </div>
+      <button type="button" class="btn" onclick="showPaymentPage()">Proceed to Payment</button>
+    </form>
+
+    <!-- Payment Page -->
+    <div class="payment-form" id="payment-form">
+      <h3>Payment Details</h3>
+      <p id="reservation-amount"></p>
+      <div class="form-group">
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" required>
+          <option value="credit-card">Credit Card</option>
+          <option value="debit-card">Debit Card</option>
+          <option value="upi">UPI</option>
+          <option value="net-banking">Net Banking</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="card-number">Card/UPI Number</label>
+        <input type="text" id="card-number" placeholder="Enter card/UPI number" required>
+      </div>
+      <button type="button" class="btn" onclick="confirmPayment()">Confirm Payment</button>
+    </div>
+
+    <!-- Confirmation -->
+    <div class="confirmation" id="confirmation">
+      <h1>Reservation Confirmed!</h1>
+      <p><strong>Customer Name:</strong> <span id="confirm-name"></span></p>
+      <p><strong>City:</strong> <span id="confirm-city"></span></p>
+      <p><strong>Restaurant:</strong> <span id="confirm-restaurant"></span></p>
+      <p><strong>Date:</strong> <span id="confirm-date"></span></p>
+      <p><strong>Time:</strong> <span id="confirm-time"></span></p>
+      <p><strong>Guests:</strong> <span id="confirm-guests"></span></p>
+      <p><strong>Total Amount:</strong> ₹<span id="confirm-amount"></span></p>
+      <button class="btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    const reservationForm = document.getElementById('reservation-form');
+    const paymentForm = document.getElementById('payment-form');
+    const confirmation = document.getElementById('confirmation');
+    const reservationAmount = document.getElementById('reservation-amount');
+
+    // Input fields
+    const customerNameInput = document.getElementById('customer-name');
+    const cityInput = document.getElementById('city');
+    const restaurantInput = document.getElementById('restaurant');
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const guestsInput = document.getElementById('guests');
+
+    // Confirmation fields
+    const confirmName = document.getElementById('confirm-name');
+    const confirmCity = document.getElementById('confirm-city');
+    const confirmRestaurant = document.getElementById('confirm-restaurant');
+    const confirmDate = document.getElementById('confirm-date');
+    const confirmTime = document.getElementById('confirm-time');
+    const confirmGuests = document.getElementById('confirm-guests');
+    const confirmAmount = document.getElementById('confirm-amount');
+
+    function calculateAmount(guests) {
+      const basePrice = 200;
+      if (guests === 1) return basePrice;
+      return Math.round(basePrice * Math.pow(1.25, guests - 1));
+    }
+
+    function showPaymentPage() {
+      const guests = parseInt(guestsInput.value);
+      const amount = calculateAmount(guests);
+      reservationAmount.textContent = `Total Amount: ₹${amount}`;
+      reservationForm.style.display = 'none';
+      paymentForm.style.display = 'block';
+    }
+
+    function confirmPayment() {
+      const guests = parseInt(guestsInput.value);
+      const amount = calculateAmount(guests);
+
+      // Set confirmation details
+      confirmName.textContent = customerNameInput.value;
+      confirmCity.textContent = cityInput.value;
+      confirmRestaurant.textContent = restaurantInput.value;
+      confirmDate.textContent = dateInput.value;
+      confirmTime.textContent = timeInput.value;
+      confirmGuests.textContent = guests;
+      confirmAmount.textContent = amount;
+
+      paymentForm.style.display = 'none';
+      confirmation.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

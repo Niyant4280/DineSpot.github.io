@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #374151;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.user-details {
+    margin: 50px auto;
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #ff4757;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e84118;
+}
